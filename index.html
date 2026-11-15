@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bilingüe Talent RD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg: #040628;
+  --bg-2: #0a0e54;
+  --fg: #ffffff;
+  --muted: #b0c2ee;
+  --blue: #20acf7;
+  --logo-navy: #090c44;
+  --surface: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.14);
+  --cta: #25d366;
+  --cta-ink: #04230f;
+  --glow: rgba(32, 172, 247, 0.22);
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-2);
+  background-image: radial-gradient(120% 420px at 50% -40px, var(--glow), transparent 70%), linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 900px);
+  background-repeat: no-repeat;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-block: 28px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.wrap > * { min-width: 0; }
+
+.brand { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.logo { width: 104px; height: 104px; filter: drop-shadow(0 0 26px rgba(32, 172, 247, 0.38)); }
+.logo .disc { fill: var(--logo-navy); stroke: rgba(255, 255, 255, 0.2); stroke-width: 6; }
+.logo .w { fill: var(--fg); }
+.logo .b { fill: var(--blue); }
+.logo .n { fill: var(--logo-navy); }
+h1 { margin: 6px 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 8.4vw, 2.3rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
+.tag { margin: 0; color: var(--muted); font-size: 1rem; text-wrap: balance; }
+.free { margin: 4px 0 0; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.86rem; font-weight: 600; }
+.free i { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(32, 172, 247, 0.2); }
+
+.cta { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 66px; padding: 0 20px; border-radius: 18px; background: var(--cta); color: var(--cta-ink); font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-decoration: none; box-shadow: 0 12px 32px rgba(37, 211, 102, 0.26); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.cta:hover { transform: translateY(-1px); box-shadow: 0 16px 36px rgba(37, 211, 102, 0.32); }
+.cta svg { width: 26px; height: 26px; flex: none; }
+
+.number { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.number .lab { display: block; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+.number .num { display: block; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.number button { min-height: 44px; padding: 0 18px; border: 1px solid var(--line); border-radius: 10px; background: transparent; color: var(--fg); font: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+.number button:hover { background: var(--surface); }
+
+.links { display: grid; gap: 12px; }
+.link { display: flex; align-items: center; gap: 14px; min-height: 66px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: var(--fg); text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease; }
+.link:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(32, 172, 247, 0.5); }
+.link svg { width: 28px; height: 28px; flex: none; fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.link span { flex: 1; min-width: 0; }
+.link strong { display: block; font-weight: 700; }
+.link small { display: block; color: var(--muted); font-size: 0.88rem; overflow-wrap: anywhere; }
+.link .go { flex: none; color: var(--muted); font-size: 1.2rem; }
+
+h2 { margin: 0; color: var(--muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+ol { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 16px; counter-reset: step; }
+li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; counter-increment: step; }
+li::before { content: counter(step); display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--blue); border-radius: 50%; color: var(--blue); font-weight: 700; font-variant-numeric: tabular-nums; }
+li strong { display: block; font-weight: 600; line-height: 1.35; padding-top: 4px; }
+li span { display: block; color: var(--muted); font-size: 0.92rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chips span { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 0.92rem; font-weight: 500; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; line-height: 1.55; text-wrap: balance; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header class="brand">
+    <svg class="logo" viewBox="45 -150 860 860" role="img" aria-label="Logo de Bilingüe Talent RD">
+      <circle class="disc" cx="475" cy="280" r="428"/>
+      <rect class="w" x="320" y="95" width="75" height="405"/>
+      <rect class="w" x="320" y="435" width="307" height="65"/>
+      <rect class="b" x="460" y="200" width="167" height="170"/>
+      <rect class="n" x="460" y="252" width="80" height="66"/>
+    </svg>
+    <h1>Bilingüe Talent RD</h1>
+    <p class="tag">Talento bilingüe<br>Vacantes en call centers y BPO</p>
+    <p class="free"><i aria-hidden="true"></i>Gratis para el candidato</p>
+  </header>
+
+  <a class="cta" href="https://wa.me/18098707577?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20de%20Biling%C3%BCe%20Talent%20RD%20y%20quiero%20informaci%C3%B3n%20sobre%20las%20vacantes%20biling%C3%BCes." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L3.5 20l1.6-4.4A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c.2 2.4 2.7 4.9 5.2 5.4l1.3-1.3-1.9-1.1-.8.6c-.8-.3-1.6-1.1-1.9-1.9l.6-.8-1.1-1.9z"/></svg>
+    <span>Escríbeme por WhatsApp</span>
+  </a>
+
+  <div class="number">
+    <div>
+      <span class="lab">Mi número</span>
+      <span class="num" id="num">+1 809 870 7577</span>
+    </div>
+    <button type="button" id="copy">Copiar</button>
+  </div>
+
+  <nav class="links" aria-label="Redes sociales">
+    <a class="link" href="https://www.instagram.com/bilinguetalent.rd" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="0.6"/></svg>
+      <span><strong>Instagram</strong><small>@bilinguetalent.rd</small></span>
+      <span class="go" aria-hidden="true">↗</span>
+    </a>
+    <a class="link" href="https://www.tiktok.com/@bilinguetalent.rd" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M14 3c.3 2.6 2 4.4 4.8 4.6"/></svg>
+      <span><strong>TikTok</strong><small>@bilinguetalent.rd</small></span>
+      <span class="go" aria-hidden="true">↗</span>
+    </a>
+  </nav>
+
+  <section aria-labelledby="como">
+    <h2 id="como">Cómo funciona</h2>
+    <ol>
+      <li><div><strong>Escríbeme por WhatsApp</strong><span>Dime qué vacante te interesa.</span></div></li>
+      <li><div><strong>Envíame tu CV actualizado en inglés</strong><span>Así reviso tu perfil.</span></div></li>
+      <li><div><strong>Te cuento las vacantes disponibles</strong><span>Con sueldo y beneficios.</span></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="need">
+    <h2 id="need">Lo que necesitas</h2>
+    <div class="chips">
+      <span>CV actualizado en inglés</span>
+      <span>Inglés intermedio (B1–B2)</span>
+    </div>
+  </section>
+
+  <footer>
+    Es gratis para el candidato. Nunca se cobra por conseguir empleo.<br>
+    Santo Domingo y otras localidades.
+  </footer>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var num = document.getElementById("num");
+  var timer;
+  function label(t) {
+    btn.textContent = t;
+    clearTimeout(timer);
+    timer = setTimeout(function () { btn.textContent = "Copiar"; }, 2200);
+  }
+  function selectNumber() {
+    var r = document.createRange();
+    r.selectNodeContents(num);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  }
+  btn.addEventListener("click", function () {
+    var txt = num.textContent.trim();
+    var p;
+    try { p = navigator.clipboard.writeText(txt); } catch (e) { p = Promise.reject(e); }
+    p.then(function () { label("Copiado"); }, function () { selectNumber(); label("Copia el número"); });
+  });
+})();
+</script>
+</body>
+</html>
